@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ShopContent.Modell
 {
-    class Categories : INotifyPropertyChanged
+    public class Categories : INotifyPropertyChanged
     {
         private int id;
         public int Id {  get { return id; } set { id = value; OnPropertyChanged("Name"); } }
@@ -14,7 +14,7 @@ namespace ShopContent.Modell
         private string name;
         public string Name
         {
-            get { return name; } set {  name = value; OnPropertyChanged("Name");
+            get { return name; } set { name = value; OnPropertyChanged("Name"); }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
