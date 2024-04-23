@@ -29,7 +29,7 @@ namespace ShopContent.Context
                     Price=dataItems.GetDouble(2),
                     Description = dataItems.GetString(3),
                     Category = dataItems.IsDBNull(4) ? null : allCategories.Where(x => x.Id == dataItems.GetInt32(4)).First()
-                });
+                });         
             }
 
             Connection.CloseConnection(connection);
@@ -41,8 +41,7 @@ namespace ShopContent.Context
             SqlConnection connection = null;
             if (New)
             {
-                SqlDataReader dataItems = Connection.Query("INSERT INTO [dbo].[Items](Name, Price, Description) OUTPUT Inserted.Id VALUES (" +
-                                                          $"N'{this.Name}' , {this.Price}, N'{this.Description}'", out connection);
+                SqlDataReader dataItems = Connection.Query($"INSERT INTO [dbo].[Items](Name, Price, Description) OUTPUT Inserted.Id VALUES (N'{this.Name}' , {this.Price}, N'{this.Description}')", out connection);
                 dataItems.Read();
                 this.Id = dataItems.GetInt32(0);
             }

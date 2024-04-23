@@ -18,7 +18,7 @@
     </Page.Resources>
     
     <Grid>
-        <ListView ItemsSource="{Binding Items}" HorizontalAlignment="Stretch" Margin="0, 0, 0, 40">
+        <ListView ItemsSource="{Binding Items}" HorizontalContentAlignment="Stretch" Margin="0, 0, 0, 40">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <element:Item DataContext ="{Binding}"/>

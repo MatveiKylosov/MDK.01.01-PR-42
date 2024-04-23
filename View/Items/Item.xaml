@@ -57,7 +57,7 @@
             <TextBox Text="{Binding Category.Name}" Height="26" VerticalAlignment="Top" Margin="10, 93, 10, 0" VerticalContentAlignment="Center" IsEnabled="False" Grid.ColumnSpan="2"/>
 
             <Label Content="Описание:" VerticalAlignment="Top" Margin="10,123,10,0" Grid.ColumnSpan="2"/>
-            <TextBox Text="{Binding Name}" Height="26" VerticalAlignment="Top" Margin="10, 150, 10, 0" VerticalContentAlignment="Center" IsEnabled="False" Grid.ColumnSpan="2"/>
+            <TextBox Text="{Binding Description}" Height="26" VerticalAlignment="Top" Margin="10, 150, 10, 0" VerticalContentAlignment="Center" IsEnabled="False" Grid.ColumnSpan="2"/>
         </Grid>
     </Grid>
 </UserControl>
