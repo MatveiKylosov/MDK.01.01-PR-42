@@ -21,6 +21,9 @@ namespace ShopContent.Modell
         private double price;
         public double Price {  get { return price; } set { price = value; OnPropertyChanged("Price"); } }
 
+        private string description;
+        public string Description { get { return name; } set { name = value; OnPropertyChanged("Description"); } }
+
         private Categories category;
         public Categories Category { get { return category; } set { category = value; OnPropertyChanged("Category"); } }
 

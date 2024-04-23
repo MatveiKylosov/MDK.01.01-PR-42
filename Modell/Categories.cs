@@ -9,12 +9,13 @@ namespace ShopContent.Modell
     public class Categories : INotifyPropertyChanged
     {
         private int id;
-        public int Id {  get { return id; } set { id = value; OnPropertyChanged("Name"); } }
+        public int Id { get { return id; } set { id = value; OnPropertyChanged("Name"); } }
 
         private string name;
         public string Name
         {
-            get { return name; } set { name = value; OnPropertyChanged("Name"); }
+            get { return name; }
+            set { name = value; OnPropertyChanged("Name"); }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -23,4 +24,5 @@ namespace ShopContent.Modell
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
+    }
 }

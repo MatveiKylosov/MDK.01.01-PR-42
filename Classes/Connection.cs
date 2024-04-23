@@ -2,7 +2,7 @@
 
 namespace ShopContent.Classes
 {
-    class Connection
+    public class Connection
     {
         private static readonly string config = "server = localhost;Trusted_Connection=No;DataBase=ShopContent;User=***;PWD=***";
         public static SqlConnection OpenConnection()
