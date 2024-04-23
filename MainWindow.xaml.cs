@@ -26,7 +26,7 @@ namespace ShopContent
         {
             InitializeComponent();
             Instance = this;
-
+            frame.Navigate(Main);
         }
 
         private void OpenIndex(object sender, MouseButtonEventArgs e) => frame.Navigate(Main);

@@ -10,14 +10,15 @@ namespace ShopContent.Context
     {
         public ItemsContext(bool save = false) 
         {
-            if (save) Save(true);
+            if (save) 
+                Save(true);
             Category = new Categories();
         }
          
         public static ObservableCollection<ItemsContext> AllItems()
         {
             ObservableCollection<ItemsContext> allItems = new ObservableCollection<ItemsContext>();
-            ObservableCollection<CategoriesContext> allCategories = new ObservableCollection<CategoriesContext>();
+            ObservableCollection<CategoriesContext> allCategories = CategoriesContext.AllCategories();
             SqlConnection connection;
             SqlDataReader dataItems = Connection.Query("SELECT * FROM [dbo].[Items]", out connection);
             while(dataItems.Read())
@@ -27,7 +28,7 @@ namespace ShopContent.Context
                     Name= dataItems.GetString(1),
                     Price=dataItems.GetDouble(2),
                     Description = dataItems.GetString(3),
-                    Category = dataItems.IsDBNull(4) ? null : allCategories.Where(x => x.Id = dataItems.GetInt32(4)).First()
+                    Category = dataItems.IsDBNull(4) ? null : allCategories.Where(x => x.Id == dataItems.GetInt32(4)).First()
                 });
             }
 
@@ -76,7 +77,7 @@ namespace ShopContent.Context
             {
                 return new RelayCommand(obj =>
                 {
-                    Category = CategoriesContext.AllCategories.AllCategories().Where(x => x.Id == this.Category.Id).First();
+                    Category = CategoriesContext.AllCategories().Where(x => x.Id == this.Category.Id).First();
                     Save();
                 });
             }

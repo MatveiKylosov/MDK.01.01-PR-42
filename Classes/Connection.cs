@@ -4,7 +4,7 @@ namespace ShopContent.Classes
 {
     public class Connection
     {
-        private static readonly string config = "server = localhost;Trusted_Connection=No;DataBase=ShopContent;User=***;PWD=***";
+        private static readonly string config = "server = DESKTOP-7K0NDVP;Trusted_Connection=No;DataBase=ShopContent;User=SA;PWD=Asdfg123";
         public static SqlConnection OpenConnection()
         {
             SqlConnection connection = new SqlConnection(config);

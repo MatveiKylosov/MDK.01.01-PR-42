@@ -22,11 +22,7 @@ namespace ShopContent.View
         public Add(object Context)
         {
             InitializeComponent();
-            DataContext = new
-            {
-                item = Context,
-                Categories = new ViewModell.VMCategories()
-            };
+            DataContext = new { item = Context, categories = new ViewModell.VMCategories()};
         }
     }
 }
