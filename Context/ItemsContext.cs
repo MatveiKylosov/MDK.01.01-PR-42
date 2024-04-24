@@ -1,5 +1,5 @@
-﻿using ShopContent.Modell;
-using ShopContent.Classes;
+﻿using ShopContent.Classes;
+using ShopContent.Modell;
 using System.Collections.ObjectModel;
 using System.Data.SqlClient;
 using System.Linq;
@@ -8,28 +8,29 @@ namespace ShopContent.Context
 {
     public class ItemsContext : Items
     {
-        public ItemsContext(bool save = false) 
+        public ItemsContext(bool save = false)
         {
-            if (save) 
+            if (save)
                 Save(true);
             Category = new Categories();
         }
-         
+
         public static ObservableCollection<ItemsContext> AllItems()
         {
             ObservableCollection<ItemsContext> allItems = new ObservableCollection<ItemsContext>();
             ObservableCollection<CategoriesContext> allCategories = CategoriesContext.AllCategories();
             SqlConnection connection;
             SqlDataReader dataItems = Connection.Query("SELECT * FROM [dbo].[Items]", out connection);
-            while(dataItems.Read())
+            while (dataItems.Read())
             {
-                allItems.Add(new ItemsContext() { 
-                    Id= dataItems.GetInt32(0),
-                    Name= dataItems.GetString(1),
-                    Price=dataItems.GetDouble(2),
+                allItems.Add(new ItemsContext()
+                {
+                    Id = dataItems.GetInt32(0),
+                    Name = dataItems.GetString(1),
+                    Price = dataItems.GetDouble(2),
                     Description = dataItems.GetString(3),
                     Category = dataItems.IsDBNull(4) ? null : allCategories.Where(x => x.Id == dataItems.GetInt32(4)).First()
-                });         
+                });
             }
 
             Connection.CloseConnection(connection);
@@ -62,11 +63,11 @@ namespace ShopContent.Context
             Connection.CloseConnection(connection);
         }
 
-        public RelayCommand OnEdit 
+        public RelayCommand OnEdit
         {
             get
             {
-                return new RelayCommand(obj => { MainWindow.Instance.frame.Navigate(new View.Add(this)); });
+                return new RelayCommand(obj => { MainWindow.Instance.frame.Navigate(new View.Items.Add(this)); });
             }
         }
 

@@ -1,5 +1,4 @@
-﻿using ShopContent.Modell;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -12,17 +11,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ShopContent.View
+namespace ShopContent.View.Items.UserControls
 {
     /// <summary>
-    /// Логика взаимодействия для Add.xaml
+    /// Логика взаимодействия для Item.xaml
     /// </summary>
-    public partial class Add : Page
+    public partial class Item : UserControl
     {
-        public Add(object Context)
+        public Item()
         {
             InitializeComponent();
-            DataContext = new { item = Context, categories = new ViewModell.VMCategories()};
         }
     }
 }

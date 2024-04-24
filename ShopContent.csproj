@@ -16,14 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\ic_item.png" />
-    <Resource Include="Images\ic_shop.png" />
+    <Folder Include="View\Categories\UserControls\" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="SQL\create table.sql">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
+    <Resource Include="Images\ic_item.png" />
+    <Resource Include="Images\ic_shop.png" />
   </ItemGroup>
 
 </Project>
