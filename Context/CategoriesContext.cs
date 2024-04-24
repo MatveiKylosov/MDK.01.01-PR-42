@@ -42,7 +42,7 @@ namespace ShopContent.Context
             }
 
             Connection.CloseConnection(connection);
-            //MainWindow.Instance.frame.Navigate(MainWindow.Instance.MainC);
+            MainWindow.Instance.frame.Navigate(MainWindow.Instance.MainCategories);
         }
 
         public void Delete()
@@ -52,13 +52,13 @@ namespace ShopContent.Context
             Connection.CloseConnection(connection);
         }
 
-        /*        public RelayCommand OnEdit
-                {
-                    get
-                    {   //JOCKI EDIT
-                        return new RelayCommand(obj => { MainWindow.Instance.frame.Navigate(new View.Pages.Categories.Add(this)); });
-                    }
-                }*/
+        public RelayCommand OnEdit
+        {
+            get
+            {
+                return new RelayCommand(obj => { MainWindow.Instance.frame.Navigate(new View.Categories.Add(this)); });
+            }
+        }
 
         public RelayCommand OnSave
         {
@@ -78,8 +78,7 @@ namespace ShopContent.Context
                 return new RelayCommand(obj =>
                 {
                     Delete();
-                    //edit
-                    //(MainWindow.Instance.MainC.DataContext as ViewModell.VMCategories).Categories.Remove(this);
+                    (MainWindow.Instance.MainCategories.DataContext as ViewModell.VMCategories).Categories.Remove(this);
                 });
             }
         }

@@ -53,7 +53,7 @@ namespace ShopContent.Context
             }
 
             Connection.CloseConnection(connection);
-            MainWindow.Instance.frame.Navigate(MainWindow.Instance.Main);
+            MainWindow.Instance.frame.Navigate(MainWindow.Instance.MainItems);
         }
 
         public void Delete()
@@ -90,7 +90,7 @@ namespace ShopContent.Context
                 return new RelayCommand(obj =>
                 {
                     Delete();
-                    (MainWindow.Instance.Main.DataContext as ViewModell.VMItems).Items.Remove(this);
+                    (MainWindow.Instance.MainItems.DataContext as ViewModell.VMItems).Items.Remove(this);
                 });
             }
         }

@@ -15,6 +15,7 @@
 
             <Label Content="Вещи для дома" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="15pt"/>
             <Image Width="30" Height="30" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Left" Source="/Images/ic_shop.png" MouseDown="OpenIndex"/>
+            <Image Width="30" Height="30" Margin="60, 10, 10, 10" VerticalAlignment="Top" HorizontalAlignment="Left" Source="/Images/ic_category.png" MouseDown="OpenCategory"/>
         </Grid>
     </Grid>
 </Window>
