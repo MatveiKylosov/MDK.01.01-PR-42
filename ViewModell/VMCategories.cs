@@ -16,18 +16,18 @@ namespace ShopContent.ViewModell
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
 
-        /*        public Classes.RelayCommand NewCategories
+        public Classes.RelayCommand NewCategories
+        {
+            get
+            {
+                return new Classes.RelayCommand(obj =>
                 {
-                    get
-                    {
-                        return new Classes.RelayCommand(obj =>
-                        {
-                            Context.CategoriesContext newModell = new Context.CategoriesContext(true);
-                            Categories.Add(newModell);
-                            MainWindow.Instance.frame.Navigate(new View.Pages.Categories.Add(newModell));
-                        }
-                        );
-                    }
-                }*/
+                    Context.CategoriesContext newModell = new Context.CategoriesContext(true);
+                    Categories.Add(newModell);
+                    MainWindow.Instance.frame.Navigate(new View.Categories.Add(newModell));
+                }
+                );
+            }
+        }
     }
 }
